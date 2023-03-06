@@ -1,0 +1,25 @@
+{% extends 'products/shared/base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+
+
+  <body>
+
+   <h3>flappyBird </h3>
+
+  
+
+   <canvas id="canvas" width="288" height="512"></canvas>
+
+  
+
+   <script src="{% static 'js/flappy.js' %}"></script>
+
+  </body>
+
+
+
+
+{% endblock content %}

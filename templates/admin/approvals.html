@@ -1,0 +1,66 @@
+{% extends 'products/shared/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+
+<body>
+    <div class="container-xxl py-5 bg-dark hero-header mb-5">
+        <div class="container text-center my-5 pt-5 pb-4">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Approvals </h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center text-uppercase">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Sign-Up</a></li>
+                    <li class="breadcrumb-item"><a href="#">About-Us</a></li>
+                   
+                </ol>
+            </nav>
+        </div>
+    </div>
+    </div>
+    <div class="container">
+      <br><br>
+        <h1 style="text-align: center;">Approve Merchants</h1>
+        <hr>
+        <div class="container m-5">
+            
+            <table class="table my_custom_table">
+                <thead class="my_custom_thead">
+                    <tr>
+                        <th colspan="5">
+                            Remaining...
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for merchants in approvals %}
+                    <tr>
+                        
+                        <td class="text-left">
+                            <h4>
+                                Name:</h4> {{ merchants.username }}
+                            <br>
+                                Email: {{ merchants.email }}
+                            <br>
+                                Phone: {{ merchants.phn_number }}
+                            <br>
+                                Address: {{ merchants.address }} 
+                        </td>
+                        <td>
+                            <a href="{% url 'approve_merchant' merchants.id %}" cls="btn btn-primary"> Approve</a>
+                            
+                        </td>
+                        
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+                
+           
+        </div>   
+    </div>
+
+
+{% endblock content %}

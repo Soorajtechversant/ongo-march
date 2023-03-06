@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Thanks for your order!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  {% if user.is_authenticated and user.user_type == 'customer' %}
+
+   
+    {% csrf_token %}
+
+
+  <section>
+    <p>
+      We appreciate your business! If you have any questions, please mail us at ongodelivery@ongo.com
+
+      <p class="text-center">
+
+
+        please click <a href="{% url 'customer_index' %}">here</a> to continue shopping</p>
+    </p>
+     
+    </p>
+  </section>
+
+{% else %}
+
+
+{% csrf_token %}
+
+
+<section>
+  <p>
+    We appreciate your business! If you have any questions, please mail us at ongodelivery@ongo.com
+
+    <p class="text-center">
+
+
+      please click <a href="{% url 'owner_index' %}">here</a> to continue shopping</p>
+  </p>
+   
+  </p>
+</section>
+
+{% endif %}
+</body>
+</html>
